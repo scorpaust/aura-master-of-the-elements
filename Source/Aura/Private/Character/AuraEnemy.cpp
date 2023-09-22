@@ -35,3 +35,8 @@ void AAuraEnemy::UnHighlightActor()
 
 	Weapon->SetRenderCustomDepth(false);
 }
+
+void AAuraEnemy::BeginPlay()
+{
+	AbilitySystemComponent->InitAbilityActorInfo(this, this);
+}
