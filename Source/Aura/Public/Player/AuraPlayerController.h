@@ -35,9 +35,9 @@ protected:
 
 private:
 
-	IEnemyInterface* LastActor;
+	TObjectPtr<IEnemyInterface> LastActor;
 
-	IEnemyInterface* ThisActor;
+	TObjectPtr<IEnemyInterface> ThisActor;
 
 	UPROPERTY(EditAnywhere, Category = "Input")
 	TObjectPtr<UInputMappingContext> AuraContext;
