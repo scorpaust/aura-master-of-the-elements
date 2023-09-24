@@ -3,6 +3,11 @@
 
 #include "UI/WidgetController/AuraWidgetController.h"
 
+void UAuraWidgetController::BindCallbacksToDependencies()
+{
+
+}
+
 void UAuraWidgetController::BroadcastInitialValues()
 {
 

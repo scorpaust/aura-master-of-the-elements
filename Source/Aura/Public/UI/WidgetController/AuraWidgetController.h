@@ -50,6 +50,8 @@ class AURA_API UAuraWidgetController : public UObject
 
 public:
 
+	virtual void BindCallbacksToDependencies();
+
 	virtual void BroadcastInitialValues();
 
 	UFUNCTION(BlueprintCallable)
