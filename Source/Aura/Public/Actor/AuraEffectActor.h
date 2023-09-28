@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "GameplayEffectTypes.h"
 #include "AuraEffectActor.generated.h"
 
 /**
@@ -34,6 +35,7 @@ enum class EEffectRemovalPolicy
 */
 
 class UGameplayEffect;
+class UAbilitySystemComponent;
 
 UCLASS()
 class AURA_API AAuraEffectActor : public AActor
@@ -81,4 +83,6 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Applied Effects")
 	EEffectRemovalPolicy InfiniteEffectRemovalPolicy;
+
+	TMap<FActiveGameplayEffectHandle, UAbilitySystemComponent*> ActiveEffectHandles;
 };
