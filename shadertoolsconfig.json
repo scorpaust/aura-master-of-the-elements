@@ -1,0 +1,17 @@
+{
+  "hlsl.preprocessorDefinitions": {
+    "MAX_LIGHTS": "10",
+    "USE_SHADOWS": "1",
+    "ENABLE_FOG": "1"
+  },
+  "hlsl.additionalIncludeDirectories": [
+    "./Shaders/Common",
+    "./Shaders/Effects",
+    "./Shaders/Lighting"
+  ],
+  "hlsl.virtualDirectoryMappings": {
+    "/Common": "./Shaders/Common",
+    "/Effects": "./Shaders/Effects",
+    "/Lighting": "./Shaders/Lighting"
+  }
+}
