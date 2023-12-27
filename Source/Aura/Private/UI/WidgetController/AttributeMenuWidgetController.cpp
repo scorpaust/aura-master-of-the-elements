@@ -17,7 +17,7 @@ void UAttributeMenuWidgetController::BindCallbacksToDependencies()
         AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(Pair.Value()).AddLambda(
             [this, Pair](const FOnAttributeChangeData& Data)
             {
-                BroadcastAttributeInfo(Pair.Key, Pair.Value());
+                BroadcastAtributeInfo(Pair.Key, Pair.Value());
             }
         );
     }
@@ -31,11 +31,11 @@ void UAttributeMenuWidgetController::BroadcastInitialValues()
 
     for (auto& Pair : AS->TagsToAttributes)
     {
-        BroadcastAttributeInfo(Pair.Key, Pair.Value());
+        BroadcastAtributeInfo(Pair.Key, Pair.Value());
     }
 }
 
-void UAttributeMenuWidgetController::BroadcastAttributeInfo(const FGameplayTag& AttributeTag, const FGameplayAttribute& Attribute) const
+void UAttributeMenuWidgetController::BroadcastAtributeInfo(const FGameplayTag& AttributeTag, const FGameplayAttribute& Attribute) const 
 {
     FAuraAttributeInfo Info = AttributeInfo->FindAttributeInfoForTag(AttributeTag);
 
