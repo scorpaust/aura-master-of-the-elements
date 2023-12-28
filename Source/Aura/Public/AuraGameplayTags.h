@@ -17,6 +17,7 @@ public:
 
     static void InitializeNativeGameplayTags();
 
+
     FGameplayTag Attributes_Primary_Strength;
 
     FGameplayTag Attributes_Primary_Intelligence;
@@ -24,6 +25,7 @@ public:
     FGameplayTag Attributes_Primary_Resilience;
 
     FGameplayTag Attributes_Primary_Vigor;
+
 
     FGameplayTag Attributes_Secondary_Armor;
 
@@ -45,7 +47,19 @@ public:
 
     FGameplayTag Attributes_Secondary_MaxMana;
 
-protected:
+
+    FGameplayTag InputTag_LMB;
+
+    FGameplayTag InputTag_RMB;
+
+    FGameplayTag InputTag_01;
+
+    FGameplayTag InputTag_02;
+
+    FGameplayTag InputTag_03;
+
+    FGameplayTag InputTag_04;
+
 
 private:
 
