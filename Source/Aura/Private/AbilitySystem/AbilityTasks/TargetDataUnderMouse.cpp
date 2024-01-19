@@ -46,7 +46,7 @@ void UTargetDataUnderMouse::SendMouseCursorData()
 
     FHitResult CursorHit;
 
-    PC->GetHitResultUnderCursor(ECollisionChannel::ECC_Visibility, false, CursorHit);
+    PC->GetHitResultUnderCursor(ECC_Visibility, false, CursorHit);
 
     FGameplayAbilityTargetDataHandle DataHandle;
 
@@ -56,9 +56,12 @@ void UTargetDataUnderMouse::SendMouseCursorData()
 
     DataHandle.Add(Data);
 
-    FGameplayTag ApplicationTag;
-
-    AbilitySystemComponent->ServerSetReplicatedTargetData(GetAbilitySpecHandle(), GetActivationPredictionKey(), DataHandle, ApplicationTag, AbilitySystemComponent->ScopedPredictionKey);
+    AbilitySystemComponent->ServerSetReplicatedTargetData(
+        GetAbilitySpecHandle(),
+        GetActivationPredictionKey(),
+        DataHandle,
+        FGameplayTag(),
+        AbilitySystemComponent->ScopedPredictionKey);
 
     if (ShouldBroadcastAbilityTaskDelegates())
     {
@@ -69,4 +72,9 @@ void UTargetDataUnderMouse::SendMouseCursorData()
 void UTargetDataUnderMouse::OnTargetDataReplicatedCallback(const FGameplayAbilityTargetDataHandle& DataHandle, FGameplayTag ActivationTag)
 {
     AbilitySystemComponent->ConsumeClientReplicatedTargetData(GetAbilitySpecHandle(), GetActivationPredictionKey());
+
+    if (ShouldBroadcastAbilityTaskDelegates())
+    {
+        ValidData.Broadcast(DataHandle);
+    }
 }
