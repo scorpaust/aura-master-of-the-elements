@@ -1,0 +1,5 @@
+---, 1, 5, 10, 15, 20, 40
+Attributes.Primary.Strength, 3, 5, 7, 9, 11, 15
+Attributes.Primary.Intelligence, 20, 25, 35, 45, 60, 100
+Attributes.Primary.Resilience, 10, 15, 20, 25, 30, 50
+Attributes.Primary.Vigor, 8, 16, 24, 32, 40, 70
