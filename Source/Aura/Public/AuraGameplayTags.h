@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameplayTagContainer.h"
+#include "Aura/Public/AuraGameplayTags.h"
 
 /**
  * Aura Gameplay Tags
@@ -59,6 +60,8 @@ public:
     FGameplayTag InputTag_03;
 
     FGameplayTag InputTag_04;
+
+    FGameplayTag Damage;
 
 
 private:
