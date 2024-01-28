@@ -16,6 +16,7 @@ class UAbilitySystemComponent;
 class UAttributeSet;
 class UGameplayEffect;
 class UGameplayAbility;
+class UAnimMontage;
 
 
 UCLASS(Abstract)
@@ -29,6 +30,8 @@ public:
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 
 	UAttributeSet* GetAttributeSet() const { return AttributeSet; }
+
+    virtual UAnimMontage* GetHitReactMontage_Implementation() override;
 
 protected:
 
@@ -71,4 +74,7 @@ private:
 
     UPROPERTY(EditAnywhere, Category = "Abilities")
     TArray<TSubclassOf<UGameplayAbility>> StartupAbilities;
+
+    UPROPERTY(EditAnywhere, Category = "Combat")
+    TObjectPtr<UAnimMontage> HitReactMontage;
 };

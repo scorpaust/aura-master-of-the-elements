@@ -14,6 +14,12 @@ class UCombatInterface : public UInterface
 };
 
 /**
+ * Forward declarations 
+ */
+
+class UAnimMontage;
+
+/**
  * 
  */
 class AURA_API ICombatInterface
@@ -29,4 +35,7 @@ public:
 
     UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
     void UpdateFacingTarget(const FVector& Target);
+
+    UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+    UAnimMontage* GetHitReactMontage();
 };
