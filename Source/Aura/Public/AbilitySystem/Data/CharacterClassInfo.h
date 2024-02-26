@@ -12,6 +12,7 @@
 
 class UGameplayEffect;
 class UGameplayAbility;
+class UCurveTable;
 
 /**
  * Enums
@@ -60,5 +61,8 @@ public:
     UPROPERTY(EditDefaultsOnly, Category = "Common Class Defaults")
     TArray<TSubclassOf<UGameplayAbility>> CommonAbilities;
 	
+    UPROPERTY(EditDefaultsOnly, Category = "Common Class Defaults|Damage")
+    TObjectPtr<UCurveTable> DamageCalculationCoefficients;
+
     FCharacterClassDefaultInfo GetClassDefaultInfo(ECharacterClass CharacterClass);
 };
