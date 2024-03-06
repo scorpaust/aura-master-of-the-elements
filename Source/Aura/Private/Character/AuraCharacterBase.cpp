@@ -83,7 +83,7 @@ int32 AAuraCharacterBase::GetPlayerLevel()
     return int32();
 }
 
-FVector AAuraCharacterBase::GetCombatSocketLocation()
+FVector AAuraCharacterBase::GetCombatSocketLocation_Implementation()
 {
     check(Weapon);
 

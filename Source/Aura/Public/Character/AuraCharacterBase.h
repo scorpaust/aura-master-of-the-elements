@@ -49,7 +49,7 @@ protected:
 
     virtual int32 GetPlayerLevel() override;
 
-    virtual FVector GetCombatSocketLocation() override;
+    virtual FVector GetCombatSocketLocation_Implementation() override;
 
     UPROPERTY(EditAnywhere, Category = "Combat")
     FName WeaponTipSocketName;

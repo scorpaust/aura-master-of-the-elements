@@ -10,7 +10,4 @@ int32 ICombatInterface::GetPlayerLevel()
     return int32();
 }
 
-FVector ICombatInterface::GetCombatSocketLocation()
-{
-    return FVector();
-}
+
