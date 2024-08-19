@@ -7,6 +7,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "GameplayEffectTypes.h"
 #include "NiagaraFunctionLibrary.h"
+#include "AbilitySystem/AuraAbilitySystemLibrary.h"
 #include "Components/AudioComponent.h"
 #include "Aura/Aura.h"
 #include "AbilitySystemBlueprintLibrary.h"
@@ -84,6 +85,11 @@ void AAuraProjectile::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, 
 {
     if (!DamageEffectSpecHandle.Data.IsValid() || DamageEffectSpecHandle.Data.Get()->GetContext().GetEffectCauser() ==
         OtherActor)
+    {
+        return;
+    }
+
+    if (!UAuraAbilitySystemLibrary::IsNotFriend(DamageEffectSpecHandle.Data.Get()->GetContext().GetEffectCauser(), OtherActor))
     {
         return;
     }
